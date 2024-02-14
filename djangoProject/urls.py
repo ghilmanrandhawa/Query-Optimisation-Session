@@ -20,6 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("query_optimisation/", include("query_optimisation.urls")),
 ]
 
 if settings.DEBUG:
@@ -27,5 +28,5 @@ if settings.DEBUG:
 
     urlpatterns += [
         path("__debug__/", include(debug_toolbar.urls)),
-        # path("silk/", include("silk.urls", namespace="silk")),
+        path("silk/", include("silk.urls", namespace="silk")),
     ]
